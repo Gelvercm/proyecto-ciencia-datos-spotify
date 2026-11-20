@@ -1,41 +1,48 @@
-# Proyecto de Ciencia de Datos: ¿Qué hace popular a una canción?
+# ¿Qué hace popular a una canción? Análisis de datos de Spotify
 
-Proyecto final del curso de Ciencia de Datos (3 etapas, una por módulo).
+Proyecto final del curso de Ciencia de Datos.
 
 ## Integrantes
-- _Nombre 1_ — _usuario GitHub_
-- _Nombre 2_ — _usuario GitHub_
-- _Nombre 3 (opcional)_
+- (Nombre del integrante 1) – usuario de GitHub: `miguelmalgon-sys`
+- (Nombre del integrante 2)
+- (Nombre del integrante 3, si aplica)
 
-## 🎥 Video de presentación
-_(Pegar aquí el enlace público al video de 2 a 5 minutos, o ubicarlo en `video/`)_
+## Video de presentación
+(Aquí va el enlace al video de 2 a 5 minutos, o se indica que está en la carpeta `video/`.)
 
-## Contexto
-Dataset público de ~33 mil canciones de Spotify ([TidyTuesday 2020-01-21](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-01-21)) con atributos de audio, popularidad y género. Pregunta guía: *¿qué características de audio se asocian con la popularidad y cómo varían por género?*
+## Descripción del proyecto
+En este proyecto trabajamos con un conjunto de datos públicos de cerca de 33 mil canciones de Spotify ([TidyTuesday, enero de 2020](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-01-21)). Los datos incluyen características de audio (danceability, energy, valence, tempo, etc.), la popularidad de cada canción y su género.
 
-## Estructura
+La pregunta que guía el trabajo es: **¿qué características de audio se relacionan con la popularidad de una canción y cómo varían según el género?**
+
+El proyecto se desarrolla en tres etapas, una por cada módulo del curso.
+
+## Estructura del repositorio
 ```
 ├── README.md
-├── datos/          spotify_songs_raw.csv (original) · spotify_songs_limpio.csv (depurado)
-├── notebook/       proyecto_ciencia_datos.ipynb (abrir en Google Colab)
-├── presentacion/   presentacion_proyecto.pptx (Etapa 1 lista; añadir Etapas 2 y 3) + img/
-└── video/          video o enlace
+├── datos/            datos originales y datos limpios (.csv)
+├── notebook/         cuaderno de Google Colab (.ipynb)
+├── presentacion/     presentación de apoyo (.pptx) e imágenes
+└── video/            video de presentación o enlace
 ```
 
-## Etapas
+## Avance por etapas
 | Etapa | Módulo | Estado |
 |---|---|---|
-| 1 | Fundamentos y preparación de datos: selección, exploración, limpieza | ✅ Completa (Miguel) |
-| 2 | _(según Módulo 2)_ | ⏳ A cargo de los compañeros |
-| 3 | _(según Módulo 3)_ | ⏳ A cargo de los compañeros |
+| 1 | Fundamentos y preparación de datos | Terminada |
+| 2 | Módulo 2 | En desarrollo |
+| 3 | Módulo 3 | En desarrollo |
 
-### Etapa 1 — Resumen de limpieza
-32 833 filas × 23 columnas → 28 352 filas × 24 columnas tras la limpieza (detalle en el notebook).
-- 5 filas con nulos en nombre/artista/álbum → eliminadas.
-- `track_id` repetidos (misma canción en varias playlists) → 1 registro por canción.
-- Fechas en 3 formatos → unificadas a `datetime` + columna `anio`.
-- `key`/`mode` numéricos → notas y modo (mayor/menor); géneros como `category`.
-- `tempo = 0` inválido → nulo; duración a minutos.
+### Etapa 1: Fundamentos y preparación de datos
+Seleccionamos el dataset, exploramos sus variables y distribuciones, y lo limpiamos. Pasó de 32 833 filas y 23 columnas a 28 352 filas y 24 columnas. Estos fueron los principales problemas y lo que hicimos:
 
-## Cómo ejecutar
-Abrir `notebook/proyecto_ciencia_datos.ipynb` en [Google Colab](https://colab.research.google.com/) (si no se clona el repo, el notebook descarga los datos desde la URL original).
+- **Nulos:** 5 filas sin nombre, artista ni álbum. Las eliminamos.
+- **Duplicados:** una misma canción aparecía en varias playlists. Dejamos un registro por `track_id`.
+- **Fechas:** había tres formatos distintos. Las pasamos a tipo fecha y creamos la columna `anio`.
+- **Tipos de datos:** `key` y `mode` eran números; los convertimos a notas musicales y modo (mayor/menor). El género quedó como categoría.
+- **Valores no válidos:** `tempo = 0` lo dejamos como nulo y la duración la pasamos a minutos.
+
+El detalle con el código está en el notebook.
+
+## Cómo reproducir el análisis
+Abrir `notebook/proyecto_ciencia_datos.ipynb` en [Google Colab](https://colab.research.google.com/) y ejecutar las celdas en orden. Si el repositorio no está clonado, el notebook descarga los datos directamente desde la fuente original.
