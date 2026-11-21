@@ -30,8 +30,8 @@ El proyecto se desarrolla en tres etapas, una por cada módulo del curso.
 | Etapa | Módulo | Estado |
 |---|---|---|
 | 1 | Fundamentos y preparación de datos | Terminada |
-| 2 | Módulo 2 | Terminado |
-| 3 | Módulo 3 | Terminado |
+| 2 | Etapa 2: Análisis Exploratorio de Datos (EDA) | Terminado |
+| 3 | Etapa 3: Modelado Matemático, Storytelling y Conclusiones | Terminado |
 
 ### Etapa 1: Fundamentos y preparación de datos
 Seleccionamos el dataset, exploramos sus variables y distribuciones, y lo limpiamos. Pasó de 32 833 filas y 23 columnas a 28 352 filas y 24 columnas. Estos fueron los principales problemas y lo que hicimos:
