@@ -31,7 +31,7 @@ El proyecto se desarrolla en tres etapas, una por cada módulo del curso.
 |---|---|---|
 | 1 | Fundamentos y preparación de datos | Terminada |
 | 2 | Módulo 2 | En desarrollo |
-| 3 | Módulo 3 | En desarrollo |
+| 3 | Módulo 3 | Terminado |
 
 ### Etapa 1: Fundamentos y preparación de datos
 Seleccionamos el dataset, exploramos sus variables y distribuciones, y lo limpiamos. Pasó de 32 833 filas y 23 columnas a 28 352 filas y 24 columnas. Estos fueron los principales problemas y lo que hicimos:
