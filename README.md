@@ -5,7 +5,7 @@ Proyecto final del curso de Ciencia de Datos.
 ## Integrantes
 - Miguel Ángel Malagón Villarreal
 - Gelver Cifuentes Mendoza
-- (Nombre del integrante 3, si aplica)
+- Nicoll Oyola
 
 ## Video de presentación
 (Aquí va el enlace al video de 2 a 5 minutos, o se indica que está en la carpeta `video/`.)
@@ -30,7 +30,7 @@ El proyecto se desarrolla en tres etapas, una por cada módulo del curso.
 | Etapa | Módulo | Estado |
 |---|---|---|
 | 1 | Fundamentos y preparación de datos | Terminada |
-| 2 | Módulo 2 | En desarrollo |
+| 2 | Módulo 2 | Terminado |
 | 3 | Módulo 3 | Terminado |
 
 ### Etapa 1: Fundamentos y preparación de datos
@@ -41,6 +41,22 @@ Seleccionamos el dataset, exploramos sus variables y distribuciones, y lo limpia
 - **Fechas:** había tres formatos distintos. Las pasamos a tipo fecha y creamos la columna `anio`.
 - **Tipos de datos:** `key` y `mode` eran números; los convertimos a notas musicales y modo (mayor/menor). El género quedó como categoría.
 - **Valores no válidos:** `tempo = 0` lo dejamos como nulo y la duración la pasamos a minutos.
+
+### Etapa 2: Análisis Exploratorio de Datos (EDA)
+Exploramos las distribuciones, correlaciones y diferencias por género y época sobre las 28 352 canciones limpias para entender qué patrones se relacionan con `track_popularity`. Estos fueron los principales hallazgos:
+
+- **Distribución de popularidad:** media de `39.34` y mediana de `42.0` (rango `0` a `100`); el `9.23%` de las canciones (`2 616`) tiene popularidad `0`.
+- **Correlaciones con el audio:** relaciones lineales suaves; destacan en negativo `instrumentalness` ($\rho = -0.166$), `duracion_min` ($\rho = -0.121$) y `energy` ($\rho = -0.110$), y en positivo `anio` ($\rho = +0.150$) y `acousticness` ($\rho = +0.125$).
+- **Géneros y décadas:** `pop` (`43.50`) y `latin` (`42.62`) lideran en popularidad promedio, mientras `edm` registra la más baja (`32.01`). El catálogo se concentra en la década de `2010` (`19 830` canciones).
+
+### Etapa 3: Modelado Matemático, Storytelling y Conclusiones
+Entrenamos modelos supervisados (partición `80%` entrenamiento / `20%` prueba con `Pipeline` sin fuga de datos) usando 12 variables numéricas y 4 categóricas para evaluar tanto la predicción de puntaje continuo como la detección de canciones de alta popularidad (`track_popularity >= 60`):
+
+- **Regresión (puntaje `0–100`):** el modelo lineal base (**Regresión Ridge**) obtuvo $\text{MAE} = 18.08$, $\text{RMSE} = 21.83$ y $R^2 = 0.140$, mientras que **Gradient Boosting** mejoró a $\text{MAE} = 17.18$, $\text{RMSE} = 20.76$ y $R^2 = 0.222$, evidenciando interacciones no lineales.
+- **Clasificación (*Hit* $\ge 60$, top `22.63%`):** **Gradient Boosting** alcanzó un $\text{ROC-AUC} = 0.772$ y $\text{Accuracy} = 78.35\%$, y **Random Forest Balanceado** logró el mejor equilibrio detección/precisión ($\text{F1} = 0.501$, $\text{Recall} = 65.11\%$).
+- **Variables más influyentes:** año de lanzamiento (`24.33%`), baja instrumentalidad (`9.68%`), subgénero/género, volumen (`loudness`, `5.24%`) y duración acotada (`4.15%`).
+  
+- **Conclusión y efectividad del modelo:** el modelo es moderadamente efectivo para detectar patrones generales y hacer un filtrado inicial (*pre-screening*), pero no basta por sí solo para predecir el éxito exacto, ya que las características acústicas explican ~`22%` de la variabilidad y el ~`78%` restante depende de factores externos (marketing, redes sociales, base de fans y playlists).
 
 El detalle con el código está en el notebook.
 
