@@ -47,4 +47,8 @@ El detalle con el código está en el notebook.
 ## Cómo reproducir el análisis
 [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/miguelmalgon-sys/proyecto-ciencia-datos-spotify/blob/main/notebook/proyecto_ciencia_datos.ipynb)
 
+## Cómo reproducir el análisis
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/Gelvercm/proyecto-ciencia-datos-spotify/blob/main/notebook/proyecto_ciencia_datos.ipynb)
+
+
 Abrir `notebook/proyecto_ciencia_datos.ipynb` en [Google Colab](https://colab.research.google.com/) y ejecutar las celdas en orden. Si el repositorio no está clonado, el notebook descarga los datos directamente desde la fuente original.
