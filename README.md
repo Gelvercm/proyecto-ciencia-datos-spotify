@@ -7,8 +7,6 @@ Proyecto final del curso de Ciencia de Datos.
 - Gelver Cifuentes Mendoza
 - Nicoll Oyola
 
-## Video de presentación
-(Aquí va el enlace al video de 2 a 5 minutos, o se indica que está en la carpeta `video/`.)
 
 ## Descripción del proyecto
 En este proyecto trabajamos con un conjunto de datos públicos de cerca de 33 mil canciones de Spotify ([TidyTuesday, enero de 2020](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-01-21)). Los datos incluyen características de audio (danceability, energy, valence, tempo, etc.), la popularidad de cada canción y su género.
@@ -59,9 +57,6 @@ Entrenamos modelos supervisados (partición `80%` entrenamiento / `20%` prueba c
 - **Conclusión y efectividad del modelo:** el modelo es moderadamente efectivo para detectar patrones generales y hacer un filtrado inicial (*pre-screening*), pero no basta por sí solo para predecir el éxito exacto, ya que las características acústicas explican ~`22%` de la variabilidad y el ~`78%` restante depende de factores externos (marketing, redes sociales, base de fans y playlists).
 
 El detalle con el código está en el notebook.
-
-## Cómo reproducir el análisis
-[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/miguelmalgon-sys/proyecto-ciencia-datos-spotify/blob/main/notebook/proyecto_ciencia_datos.ipynb)
 
 ## Cómo reproducir el análisis
 [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/Gelvercm/proyecto-ciencia-datos-spotify/blob/main/notebook/proyecto_ciencia_datos.ipynb)
