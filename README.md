@@ -66,3 +66,6 @@ El detalle con el código está en el notebook.
 
 
 Abrir `notebook/proyecto_ciencia_datos.ipynb` en [Google Colab](https://colab.research.google.com/) y ejecutar las celdas en orden. Si el repositorio no está clonado, el notebook descarga los datos directamente desde la fuente original.
+
+## reproducir video
+[![Abrir en video](video/11211.mp4)]
