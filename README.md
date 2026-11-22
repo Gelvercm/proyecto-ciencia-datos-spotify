@@ -56,6 +56,9 @@ Entrenamos modelos supervisados (partición `80%` entrenamiento / `20%` prueba c
   
 - **Conclusión y efectividad del modelo:** el modelo es moderadamente efectivo para detectar patrones generales y hacer un filtrado inicial (*pre-screening*), pero no basta por sí solo para predecir el éxito exacto, ya que las características acústicas explican ~`22%` de la variabilidad y el ~`78%` restante depende de factores externos (marketing, redes sociales, base de fans y playlists).
 
+- **Recomendación de uso en negocio:** Aunque los atributos musicales no garantizan por sí solos un éxito masivo, el modelo de clasificación (
+) resulta altamente útil como herramienta de filtrado temprano (pre-screening de catálogo) para priorizar lanzamientos con perfil acústico competitivo antes de asignar presupuesto promocional.
+
 El detalle con el código está en el notebook.
 
 ## Cómo reproducir el análisis
